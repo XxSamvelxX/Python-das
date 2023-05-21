@@ -8,13 +8,11 @@ import json
 #    - pycharm-ում կարդալ data ֆայլը,
 #    - կարդացած list-ում կթողնի միայն 3-ի բաժանվող թվերը,
 #    - կտպի ստացված list-ի արժեքների միջին թվաբանականը։
-import json
-#
-# data_1 = [i for i in range(2, 10001, 2)]
-# print(len(data_1))
-# f = open('hw23.json', 'w')
-# json.dump(data_1, f)
-# ---------------------------------------------------
+
+f = open('homework23.json', 'r')
+data_2 = json.load(f)
+data_3 = [i for i in data_2 if i % 3 == 0]
+print(data_3)
 
 # 2․ Գրել ծրագիր, որը․
 #    - հետևյալ dict_1-ից կստանա նոր dict_2 այնպես, որ dict_2-ի key-երը լինեն dict_1-ի value-ները, իսկ value-ները՝ dict_1-ի value-ների երկարությունները,
