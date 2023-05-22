@@ -12,6 +12,7 @@ import json
 f = open('homework23.json', 'r')
 data_2 = json.load(f)
 data_3 = [i for i in data_2 if i % 3 == 0]
+f.close()
 print(data_3)
 
 # 2․ Գրել ծրագիր, որը․
