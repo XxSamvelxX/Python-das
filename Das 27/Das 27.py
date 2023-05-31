@@ -19,4 +19,8 @@ from functools import reduce
 # Ex 2
 # Write a program to generate this image and
 # save this image in computer (use ImageGrab)
-
+print("""    *
+   * *
+  * * *
+ * * * *
+* * * * *""")
