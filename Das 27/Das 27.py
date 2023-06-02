@@ -1,26 +1,48 @@
-from functools import reduce
+# 1․ Գրել Triangle class, որը․
+#    - __init__() -ում կընդունի եռանկյան կողմերը և կստուգի արդյոք նման կողմերով եռանկյուն գոյություն ունի թե ոչ,
+#      եթե կողմերը սխալ են տրված կվերադարձնի Error համապատասխան տեքստով,
+#    - կունենա մեթոդ, որը կվերադարձնի եռանկյան կողմերը,
+#    - կունենա մեթոդ, որը կվերադարձնի եռանկյան պարագիծը,
+#    - կունենա մեթոդ, որը կվերադարձնի եռանկյան մակերեսը,
+#    - կունենա մեթոդ, որը կվերադարձնի արդյոք եռանկյունը հավասարակողմ է, հավասարասրուն, թե անկանոն (կողմերը իրար = չեն)։
 
-# # Ex 1
-# Given an array of integers, find the pair of
-# adjacent elements that has the largest product
-# and return that product.
-# Example:
-# input -> list_1 = [3, 6, -2, -5, 7, 3]
-# output -> 21
+class Triangle:
+    """Ծրագիրը վերադարձնում է տրված կողմերը, նաև հաշվում եռանկյան պարագիծը, մակերեսը,նրա տեսակը և արդյո՞ք  գոյություն ունի տրված կողմերով եռանկյուն"""
 
-# l_1 = [3, 6, -2, -5, 7, 3]
-# a = []
-# for i in range(0, len(l_1) - 1):
-#     if i < len(l_1):
-#         a.append(l_1[i] * l_1[i + 1])
-# print(a, "Maximum is ", max(a))
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def __str__(self):
+        return f"{self.a} {self.b} {self.c}"
+
+    def par(self):
+        return self.a + self.b + self.c
+
+    def makeres(self):
+        kes = self.a + self.b + self.c
+        if self.a + self.b > self.c and self.a + self.c > self.b and self.b + self.c > self.a:
+            return round((kes * (kes - self.a) * (kes - self.b) * (kes - self.c)) ** 0.5, 2)
+        else:
+            return "Invalid parameters"
+
+    def tesak(self):
+        if self.a == self.b == self.c:
+            return "Havasarakoxm erankyun"
+        if self.a == self.b or self.b == self.c or self.a == self.c:
+            return "Havasarasrun erankyun"
+        if self.a != self.b or self.b != self.c or self.a != self.c:
+            return "Ankanon erankyun"
 
 
-# Ex 2
-# Write a program to generate this image and
-# save this image in computer (use ImageGrab)
-print("""    *
-   * *
-  * * *
- * * * *
-* * * * *""")
+# ---------------------------------------------------- Class workspace --------------------------------------------
+
+
+triangle = Triangle(10, 11, 8)
+print(triangle.__doc__)
+print(triangle)
+print(triangle.par(), '-paragic')
+print(triangle.makeres())
+print(triangle.tesak())
+
