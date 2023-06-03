@@ -22,9 +22,9 @@ class Triangle:
         return self.a + self.b + self.c
 
     def makeres(self):
-        kes = (self.a + self.b + self.c) / 2
+        kes = (self.a + self.b + self.c) /2
         if self.a + self.b > self.c and self.a + self.c > self.b and self.b + self.c > self.a:
-            return round((kes * (kes - self.a) * (kes - self.b) * (kes - self.c)) ** 0.5, 2)
+            return f"{round((kes * (kes - self.a) * (kes - self.b) * (kes - self.c)) ** 0.5, 2) }sm/qar"
         else:
             raise Exception("Invalid parameters")
 
@@ -40,7 +40,7 @@ class Triangle:
 # ---------------------------------------------------- Class workspace --------------------------------------------
 
 
-triangle = Triangle(10, 8, 8)
+triangle = Triangle(10, 4, 8)
 print(triangle.__doc__)
 print(triangle)
 print(triangle.par(), '-paragic')
