@@ -21,7 +21,7 @@ class Triangle:
         return self.a + self.b + self.c
 
     def makeres(self):
-        kes = self.a + self.b + self.c
+        kes = (self.a + self.b + self.c) / 2
         if self.a + self.b > self.c and self.a + self.c > self.b and self.b + self.c > self.a:
             return round((kes * (kes - self.a) * (kes - self.b) * (kes - self.c)) ** 0.5, 2)
         else:
