@@ -40,7 +40,7 @@ class Triangle:
 # ---------------------------------------------------- Class workspace --------------------------------------------
 
 
-triangle = Triangle(10, 41, 8)
+triangle = Triangle(10, 8, 8)
 print(triangle.__doc__)
 print(triangle)
 print(triangle.par(), '-paragic')
